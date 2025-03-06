@@ -1,9 +1,33 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://st2.depositphotos.com/1001335/11322/i/950/depositphotos_113225976-stock-photo-the-film-reel-and-popcorn.jpg" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://t3.ftcdn.net/jpg/00/77/68/38/360_F_77683876_PLF17M0IBi56nktgKNATVfOCEgqWFPBU.jpg);">
+  <div class="container">
+    <h1>Save your favourite movies here!!</h1>
+  </div>
+</div>
+
+
+
+
+
 <h1>lists</h1>
 <ul>
   <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %>
-    <%= button_to "Delete", list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <li>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBW_x2M3L_k-Yo1xsvdqdmA-77KfCq_Puf0Q&s)">
+        <%= link_to list.name, list_path(list), class: "card-title" %>
+        <%= button_to "Delete", list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+      </div>
+    </li>
   <% end %>
-
 </ul>
-<%= link_to "Create a list", new_list_path, class: "btn btn-primary"%>
+
+<%= link_to "Create a list", new_list_path, class: "btn btn-primary" %>
