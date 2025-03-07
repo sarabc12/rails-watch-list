@@ -21,12 +21,15 @@
 <h1>lists</h1>
 <ul>
   <% @lists.each do |list| %>
-    <li>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBW_x2M3L_k-Yo1xsvdqdmA-77KfCq_Puf0Q&s)">
-        <%= link_to list.name, list_path(list), class: "card-title" %>
-        <%= button_to "Delete", list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-      </div>
+    <% if list.photo.attached? %>
+      <%= link_to list_path(list), class: "card-title" do %>
+        <li>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(list.photo.key) %>')">
+          <%= button_to "Delete", list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        </div>
     </li>
+        <% end %>
+      <% end %>
   <% end %>
 </ul>
 
