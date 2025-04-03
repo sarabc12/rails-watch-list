@@ -24,12 +24,12 @@
     <% if list.photo.attached? %>
       <%= link_to list_path(list), class: "card-title" do %>
         <li>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(list.photo.key) %>')">
-          <%= button_to "Delete", list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-        </div>
-    </li>
-        <% end %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(list.photo.key) %>')">
+            <%= button_to "Delete", list_path(list), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </div>
+        </li>
       <% end %>
+    <% end %>
   <% end %>
 </ul>
 
