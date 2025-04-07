@@ -14,10 +14,41 @@
 # Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
 # Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
-require "faker"
-300.times do
-  Movie.find_or_create_by(title: Faker::Movie.title) do |movie|
-    movie.overview = Faker::Movie.quote
-    movie.rating = rand(0..5)
+# require "faker"
+# 300.times do
+#  Movie.find_or_create_by(title: Faker::Movie.title) do |movie|
+#    movie.overview = Faker::Movie.quote
+#    movie.rating = rand(0..5)
+#  end
+# end
+
+
+require "open-uri"
+require "json"
+Movie.destroy_all
+
+api_key = ENV["MOVIES_KEY"]
+base_url = "https://api.themoviedb.org/3/movie/popular"
+
+(1..50).each do |page|
+  url = "#{base_url}?api_key=#{api_key}&page=#{page}"
+  puts "Fetching page #{page}..."
+
+  begin
+    response = URI.open(url).read
+    data = JSON.parse(response)
+
+    data["results"].each do |movie_data|
+      next if movie_data["title"].blank?
+
+      Movie.create!(
+        title: movie_data["title"],
+        overview: movie_data["overview"],
+        poster_url: "https://image.tmdb.org/t/p/w500#{movie_data["poster_path"]}",
+        rating: movie_data["vote_average"]
+      )
+    end
+
   end
+
 end

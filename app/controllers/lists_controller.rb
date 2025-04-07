@@ -3,6 +3,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @movies = Movie.all.limit(30)
   end
 
   def show
