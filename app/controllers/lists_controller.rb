@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
-    @movies = Movie.all.limit(30)
+    @movies = Movie.order("RANDOM()").limit(30)
     @movies = @movies.search_by_title(params[:query]) if params[:query].present?
   end
 
