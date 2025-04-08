@@ -2,8 +2,17 @@
 .movie-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-  margin: 30px;
+  gap: 12px;
+  margin: 50px;
+}
+
+.movie-list h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.movie-list p {
+  font-size: 15px;
 }
 
 .movie-card {
@@ -16,10 +25,6 @@
 .movie-info {
   margin: 5px;
 }
-
-
-
-
 
 
 
