@@ -20,6 +20,14 @@
   width: 90%;
   border: 1px solid #3b3b3b;
   padding: 3px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.movie-list:hover > :not(:hover) {
+  filter: blur(1px);
+  opacity: 0.3;
+
 }
 
 .movie-info {

@@ -1,13 +1,17 @@
-<div class="row justify-content-center" data-controller="stop-refresh">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
+<div class="search-bar-container">
+  <div class="row justify-content-center" data-controller="stop-refresh">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search Movies!"
+          %>
 
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
+          <%= button_tag type: "submit", class: "btn d-flex align-items-center" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
