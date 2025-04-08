@@ -1,1 +1,14 @@
-<%= @movie.title %>
+<div style="display: grid">
+  <%= @movie.title %>
+  <%= @movie.overview %>
+  <% if @movie.poster_url.present? %>
+    <%= image_tag(@movie.poster_url, alt: @movie.title, style: "width: 150px; height: 200px; border-radius: 4px;") %>
+  <% end %>
+  <%= @movie.rating.to_i %>
+</div>
+
+<%= simple_form_for [@movie] do |f| %>
+  <%= f.input :title %>
+  <%= f.association :lists %>
+  <%= f.submit "Submit Bookmark", class: "btn btn-primary" %>
+<% end %>
