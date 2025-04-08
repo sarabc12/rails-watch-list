@@ -1,4 +1,30 @@
 // Specific CSS for your home-page
+.movie-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 30px;
+}
+
+.movie-card {
+  display: flex;
+  width: 90%;
+  border: 1px solid #3b3b3b;
+  padding: 3px;
+}
+
+.movie-info {
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+
 .list-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
