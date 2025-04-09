@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .movie-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 12px;
   margin: 50px;
 }
@@ -12,7 +12,9 @@
 }
 
 .movie-list p {
-  font-size: 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #3b3b3b;
+  margin-bottom: 2px;
 }
 
 .movie-card {
