@@ -1,8 +1,8 @@
 // Specific CSS for your home-page
 .movie-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 6px 6px;
   margin: 50px;
 }
 
@@ -24,6 +24,10 @@
   padding: 3px;
   cursor: pointer;
   transition: 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 1px 1px 1px #3b3b3b;
+  border-radius: 4px;
 }
 
 .movie-list:hover > :not(:hover) {
