@@ -1,0 +1,27 @@
+.row.justify-content-center {
+  margin-left: 450px;
+  margin-right: 450px;
+}
+
+.search-bar-container form.d-flex .form-control {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #b6b8b4;
+  color: #141615;
+  z-index: 1;
+  border: 1px solid #484948;
+}
+
+.search-bar-container .btn {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #767976;
+  border: 1px solid #484948 ;
+  color: #141615;
+  z-index: 2;
+  margin-left: -42px;
+}
