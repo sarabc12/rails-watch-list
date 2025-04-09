@@ -1,8 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img class="pop-corn" src="https://st2.depositphotos.com/1001335/11322/i/950/depositphotos_113225976-stock-photo-the-film-reel-and-popcorn.jpg" />
-    </a>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img class="popcorn" src="<%= asset_path('poppcorn.png') %>" alt="Popcorn" style="height:75px;" />
+        <%= link_to lists_index_path, class: "listbutton" do %>
+          <i class="fa-solid fa-film"></i>
+        <% end %>
+      </a>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,20 +18,15 @@
 
 <div class="movie-list">
   <% @movies.each do |movie| %>
-    <div class="movie-card">
+    <%= link_to movie_path(movie), class: "movie-card" do %>
       <% if movie.poster_url.present? %>
         <%= image_tag(movie.poster_url, alt: movie.title, style: "width: 150px; height: 200px; border-radius: 4px;") %>
       <% end %>
       <div class="movie-info">
         <h2><%= movie.title %></h2>
-        <p><%= truncate(movie.overview, length: 100) %></p>
-        <p>Rating : <%= movie.rating %>/10</p>
-        <%= link_to "Check Movie", movie_path(movie) %>
+        <p><%= truncate(movie.overview, length: 60) %></p>
+        <p>Rating : <%= movie.rating.to_i %>/10</p>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
-
-
-<%= link_to "Check Lists", lists_index_path, class: "btn btn-primary" %>
-
