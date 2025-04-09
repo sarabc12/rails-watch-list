@@ -1,0 +1,47 @@
+.featured-movies {
+  text-align: center;
+  padding: 20px;
+  // width: 500px;
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  .movies-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      // display: none;
+      // background-color: white;
+      &::-webkit-scrollbar-thumb {
+        color: purple;
+      }
+    }
+
+    ::-webkit-scrollbar-thumb {
+      color: purple;
+    }
+  }
+
+  .movies-slide {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+
+    img {
+      width: 120px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 2px 2px 5px #594A47;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+  }
+}
