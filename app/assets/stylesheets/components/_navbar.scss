@@ -1,12 +1,26 @@
-.navbar-lewagon {
+.listbutton {
+  border-radius: 50%;
+  background-color: #767976;
+  border: 1px solid #484948 ;
+  color: #141615;
+  text-decoration: none;
+  margin: 20px;
+  margin-bottom: 10px;
+  padding: 7px;
+}
+
+.navbar {
+  display: flex;
   justify-content: space-between;
-  background:#161616;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand {
+  display: flex;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 80px;
+.navbar-toggler {
+  flex-shrink: 1;
+  min-width: 0;
 }

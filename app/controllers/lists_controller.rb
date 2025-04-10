@@ -2,8 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :destroy]
 
   def index
-    # @lists = List.all
-    @movies = Movie.order("RANDOM()").limit(30)
+    @movies = Movie.order("RANDOM()").limit(20)
     @movies = @movies.search_by_title(params[:query]) if params[:query].present?
   end
 
@@ -32,7 +31,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to lists_index_path, status: :see_other
   end
 
   private
@@ -43,7 +42,7 @@ class ListsController < ApplicationController
 
 
   def list_params
-    params.require(:list).permit(:name, :photo)
+    params.require(:list).permit(:name, :description, :photo)
   end
 
 end

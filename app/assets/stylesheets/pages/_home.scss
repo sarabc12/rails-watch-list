@@ -1,8 +1,26 @@
 // Specific CSS for your home-page
+.banner {
+  padding: 50px;
+}
+
+.banner h1 {
+  text-align: center;
+  font-size: 200px;
+  font-weight: bold;
+  background: url(asset-path('backgroundpop.jpg')) center;
+  //background-size: cover;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+
+
 .movie-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 6px 6px;
   margin: 50px;
 }
 
@@ -24,6 +42,10 @@
   padding: 3px;
   cursor: pointer;
   transition: 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 1px 1px 1px #3b3b3b;
+  border-radius: 4px;
 }
 
 .movie-list:hover > :not(:hover) {
@@ -36,32 +58,6 @@
   margin: 5px;
 }
 
-
-
-
-
-.list-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 0;
-  list-style: none;
-}
-
-.list-item {
-  width: 100%;
-}
-
-.card-category {
-  width: 100%;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 10px;
-}
 
 
 // thingy
@@ -113,3 +109,4 @@
   box-shadow: none !important;
   outline: none !important;
 }
+
