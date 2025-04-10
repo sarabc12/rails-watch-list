@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :destroy]
 
   def index
+    # @lists = List.all
     @movies = Movie.order("RANDOM()").limit(30)
     @movies = @movies.search_by_title(params[:query]) if params[:query].present?
   end
