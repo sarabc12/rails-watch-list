@@ -8,7 +8,6 @@
 </div>
 
 <%= simple_form_for [@movie] do |f| %>
-  <%= f.input :title %>
-  <%= f.association :lists %>
+  <%= f.association :lists, as: :check_boxes %>
   <%= f.submit "Submit Bookmark", class: "btn btn-primary" %>
 <% end %>
