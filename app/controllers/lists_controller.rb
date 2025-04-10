@@ -31,7 +31,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to lists_index_path, status: :see_other
   end
 
   private
@@ -42,7 +42,7 @@ class ListsController < ApplicationController
 
 
   def list_params
-    params.require(:list).permit(:name, :photo)
+    params.require(:list).permit(:name, :description, :photo)
   end
 
 end

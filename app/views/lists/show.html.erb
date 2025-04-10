@@ -23,24 +23,13 @@
 
 <div class="featured-movies">
   <h2>Featured Books</h2>
-
-
-
     <div class="movies-carousel">
-
       <% @list.bookmarks.each do |bookmark| %>
-
         <div class="movies-slide">
-
           <%= link_to movie_path(bookmark.movie) do %>
             <%= image_tag(bookmark.movie.poster_url, alt: bookmark.movie.title, style: "width: 150px; height: 200px; border-radius: 4px;") %>
           <% end %>
-
         </div>
-
       <% end %>
-
     </div>
-
-
 </div>

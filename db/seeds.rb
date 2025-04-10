@@ -26,6 +26,7 @@
 require "open-uri"
 require "json"
 Movie.destroy_all
+List.destroy_all
 
 api_key = ENV["MOVIES_KEY"]
 base_url = "https://api.themoviedb.org/3/movie/popular"
@@ -52,3 +53,21 @@ base_url = "https://api.themoviedb.org/3/movie/popular"
   end
 
 end
+
+onelist = URI.parse("https://s.studiobinder.com/wp-content/uploads/2020/01/What-is-Drama-Definition-Examples-and-Characteristics-Featured.jpg").open
+list1 = List.new(
+  name:"Drama",
+  description:"A curated selection of powerful dramas that explore the depth of human emotion, complex relationships, and unforgettable storytelling. From tearjerkers to thought-provoking narratives, these films will leave a lasting impression."
+)
+
+list1.photo.attach(io: onelist, filename:"drama")
+list1.save!
+
+twolist = URI.parse("https://i.pinimg.com/736x/df/0d/ed/df0ded888c426121cabcd5ac609b63d3.jpg").open
+list2 = List.new(
+  name:"Cartoon",
+  description:"A fun-filled list of animated favorites—classic hits and hidden gems for all ages. Laugh, dream, and relive the magic of cartoons!"
+)
+
+list2.photo.attach(io: twolist, filename:"cartoon")
+list2.save!
