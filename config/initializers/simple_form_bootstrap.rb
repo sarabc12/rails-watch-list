@@ -40,8 +40,8 @@ SimpleForm.setup do |config|
   config.error_method = :to_sentence
 
   # add validation classes to `input_field`
-  config.input_field_error_class = 'is-invalid'
-  config.input_field_valid_class = 'is-valid'
+  config.input_field_error_class = ''
+  config.input_field_valid_class = ''
 
 
   # vertical forms

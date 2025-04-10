@@ -1,13 +1,19 @@
-<div style="display: grid">
-  <%= @movie.title %>
-  <%= @movie.overview %>
-  <% if @movie.poster_url.present? %>
-    <%= image_tag(@movie.poster_url, alt: @movie.title, style: "width: 150px; height: 200px; border-radius: 4px;") %>
-  <% end %>
-  <%= @movie.rating.to_i %>
+<div class="movie-container">
+  <div class="movie-image">
+    <% if @movie.poster_url.present? %>
+      <%= image_tag(@movie.poster_url, alt: @movie.title) %>
+    <% end %>
+  </div>
+
+  <div class="movie-info">
+    <h1><%= @movie.title %></h1>
+    <p><%= @movie.rating.to_i %></p>
+    <p><%= @movie.overview %></p>
+  </div>
 </div>
 
-<%= simple_form_for [@movie] do |f| %>
+
+<%= simple_form_for(@movie, html: { novalidate: true, class: "no-validation" }) do |f| %>
   <%= f.association :lists, as: :check_boxes %>
   <%= f.submit "Submit Bookmark", class: "btn btn-primary" %>
 <% end %>

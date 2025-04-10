@@ -1,0 +1,29 @@
+.movie-container {
+  display: flex;
+  width: 85%;
+  // padding: 1px;
+  margin: auto;
+  margin-top: 40px;
+  box-shadow: 0 0 10px white;
+  border-radius: 32px;
+  height: 350px;
+
+  .movie-image {
+    // width: 1200px;
+  }
+
+  img {
+    // margin: 1px;
+    width: 250px;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+    height: 100%;
+  }
+
+  .movie-info {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
