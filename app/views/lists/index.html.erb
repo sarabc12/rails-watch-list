@@ -1,18 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img class="popcorn" src="<%= asset_path('poppcorn.png') %>" alt="Popcorn" style="height:75px;" />
-        <%= link_to lists_index_path, class: "listbutton" do %>
-          <i class="fa-solid fa-film"></i>
-        <% end %>
-      </a>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
+
+
+<div class="banner">
+  <h1>Cinema Box </h1>
 </div>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= asset_path('cinemabox2.jpg') %>)"></div>
 
 <%= render "search_bar" %>
 

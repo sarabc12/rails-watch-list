@@ -17,6 +17,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar d-flex justify-content-between align-items-center px-3">
+      <div class="navbar-brand d-flex align-items-center">
+        <%= link_to root_path do %>
+          <img class="popcorn" src="<%= asset_path('poppcorn.png') %>" alt="Popcorn" style="height:75px;" />
+        <% end %>
+      </div>
+      <div class="d-flex align-items-center">
+        <%= link_to lists_index_path, class: "listbutton me-3" do %>
+          <i class="fa-solid fa-film"></i>
+        <% end %>
+      </div>
+    </div>
+  <%= yield %>
   </body>
 </html>
