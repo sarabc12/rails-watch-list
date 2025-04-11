@@ -8,10 +8,6 @@
   border-radius: 32px;
   height: 350px;
 
-  .movie-image {
-    // width: 1200px;
-  }
-
   img {
     // margin: 1px;
     width: 250px;
@@ -19,7 +15,6 @@
     border-bottom-left-radius: 32px;
     height: 100%;
   }
-
   .movie-info {
     margin: 20px;
     display: flex;
@@ -28,7 +23,6 @@
     // width: 50%;
   }
 }
-
 .add-list-form {
   width: 50%;
   margin: auto;
