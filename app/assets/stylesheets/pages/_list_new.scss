@@ -1,0 +1,43 @@
+.list-head {
+  width: 55%;
+  margin: auto;
+  text-align: center;
+  // position: relative;
+}
+
+.new-list-form {
+  width: 25%;
+  margin: auto;
+  margin-top: 100px;
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    background-color: lightgray;
+  }
+
+  input {
+    background-color: lightgray;
+  }
+
+  .button-85 {
+    background-color: black;
+  }
+
+
+}
+
+label {
+  position: relative;
+  left: 5px;
+  top: 35px;
+  background-color: lightgray;
+  padding: 0 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
+
+
+}
+input:focus+label {
+  transform: translateY(-25px);
+  color: lightblue;
+}

@@ -20,11 +20,13 @@
 </div>
 
 <div class="add-list-form" data-controller="toggle">
-  <button class="btn btn-primary" data-action="click->toggle#fire">Add to a List</button>
+  <button class="button-85" data-action="click->toggle#fire">
+    <p>Add to a List</p>
+  </button>
   <div class="d-none" data-toggle-target="form">
     <%= simple_form_for(@movie, html: { novalidate: true, class: "no-validation" }) do |f| %>
       <%= f.association :lists, as: :check_boxes %>
-      <%= f.submit "Submit Bookmark", class: "btn btn-primary" %>
+      <%= f.submit "Submit Bookmark", class: "button-85" %>
     <% end %>
   </div>
 </div>
