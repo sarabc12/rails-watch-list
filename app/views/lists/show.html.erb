@@ -21,9 +21,15 @@
         <% end %>
         <div class="movie-infos">
           <ul>
-            <li><strong><%= bookmark.movie.title %></strong></li>
-            <li><%= bookmark.movie.overview %></li>
-            <li>⭐ <%= bookmark.movie.rating.to_i %></li>
+            <li class="movie-title"><strong><%= bookmark.movie.title %></strong></li>
+
+            <div data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+              <li class="my-content" data-read-more-target="content">
+                <%= bookmark.movie.overview %>
+              </li>
+              <button class="read-more-button" data-action="read-more#toggle">Read more</button>
+            </div>
+            <li><%= bookmark.movie.rating.to_i %></li>
             <li>
               <%= link_to "Delete bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
             </li>

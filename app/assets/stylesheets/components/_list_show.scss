@@ -74,3 +74,24 @@
     font-size: 12px;
   }
 }
+
+.movie-title {
+  color: #B2B2B2;
+}
+
+
+.my-content {
+  color: #EAEAEA;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--read-more-line-clamp, 5);
+}
+
+.read-more-button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: #B2B2B2;
+  padding: 0;
+}
