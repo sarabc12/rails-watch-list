@@ -1,6 +1,6 @@
 .movie-container {
   display: flex;
-  width: 85%;
+  width: 55%;
   // padding: 1px;
   margin: auto;
   margin-top: 40px;
@@ -21,9 +21,16 @@
   }
 
   .movie-info {
-    margin: 10px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // width: 50%;
   }
+}
+
+.add-list-form {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
 }

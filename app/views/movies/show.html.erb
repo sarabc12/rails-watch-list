@@ -6,14 +6,25 @@
   </div>
 
   <div class="movie-info">
-    <h1><%= @movie.title %></h1>
-    <p><%= @movie.rating.to_i %></p>
+    <div>
+      <h1><%= @movie.title %></h1>
+      <div class="movie-rating">
+      <p><%= @movie.rating.to_i %> / 10</p>
+        <% @movie.rating.to_i.times do %>
+          <i class="fa-solid fa-star fa-rotate-90" style="color: #FFD43B;"></i>
+        <% end %>
+      </div>
+    </div>
     <p><%= @movie.overview %></p>
   </div>
 </div>
 
-
-<%= simple_form_for(@movie, html: { novalidate: true, class: "no-validation" }) do |f| %>
-  <%= f.association :lists, as: :check_boxes %>
-  <%= f.submit "Submit Bookmark", class: "btn btn-primary" %>
-<% end %>
+<div class="add-list-form" data-controller="toggle">
+  <button class="btn btn-primary" data-action="click->toggle#fire">Add to a List</button>
+  <div class="d-none" data-toggle-target="form">
+    <%= simple_form_for(@movie, html: { novalidate: true, class: "no-validation" }) do |f| %>
+      <%= f.association :lists, as: :check_boxes %>
+      <%= f.submit "Submit Bookmark", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
