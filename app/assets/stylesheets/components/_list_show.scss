@@ -30,6 +30,8 @@
   .movies-slide {
     flex: 0 0 auto;
     scroll-snap-align: start;
+    margin: 10px;
+    border-right: 1px solid #646464;
 
     img {
       width: 120px;
@@ -38,10 +40,37 @@
       border-radius: 8px;
       box-shadow: 2px 2px 5px #594A47;
       transition: transform 0.3s ease;
+      margin-right: 8px;
     }
 
     img:hover {
       transform: scale(1.05);
     }
+  }
+}
+
+.movie-infos {
+  margin-top: 8px;
+  width: 150px; /* match the image width */
+  text-align: left;
+  font-size: 15px;
+  color: #646464;
+  padding: 5px;
+
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  a {
+    color: #b00020;
+    text-decoration: underline;
+    font-size: 12px;
   }
 }

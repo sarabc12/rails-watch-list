@@ -1,35 +1,35 @@
-<%= link_to "Index", root_path, class: "btn btn-primary" %>
+
 <h2><%= @list.name %></h2>
-<%= link_to "Back to list", lists_index_path, class: "btn btn-primary"%>
 <p><%= link_to "Delete list", list_path(@list),
                 data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure you want to delete the list and associated bookmarks?"
                 } %>
-              </p>
+</p>
 
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
-    <li><%= bookmark.movie.title %></li>
-    <li><%= bookmark.movie.overview %></li>
-    <li><%= bookmark.movie.rating %></li>
-    <li><%= link_to "Delete bookmark", bookmark_path(bookmark),
-        data: {
-          turbo_method: :delete,
-          turbo_confirm: "Are you sure?"
-        } %></li>
   <% end %>
 </ul>
 
 <div class="featured-movies">
-  <h2>Featured Books</h2>
-    <div class="movies-carousel">
-      <% @list.bookmarks.each do |bookmark| %>
-        <div class="movies-slide">
-          <%= link_to movie_path(bookmark.movie) do %>
-            <%= image_tag(bookmark.movie.poster_url, alt: bookmark.movie.title, style: "width: 150px; height: 200px; border-radius: 4px;") %>
-          <% end %>
+  <div class="movies-carousel">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="movies-slide">
+        <%= link_to movie_path(bookmark.movie) do %>
+          <%= image_tag(bookmark.movie.poster_url, alt: bookmark.movie.title, style: "width: 150px; height: 200px; border-radius: 4px;") %>
+        <% end %>
+        <div class="movie-infos">
+          <ul>
+            <li><strong><%= bookmark.movie.title %></strong></li>
+            <li><%= bookmark.movie.overview %></li>
+            <li>⭐ <%= bookmark.movie.rating.to_i %></li>
+            <li>
+              <%= link_to "Delete bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            </li>
+          </ul>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 </div>

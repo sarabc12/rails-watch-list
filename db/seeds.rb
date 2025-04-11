@@ -63,6 +63,7 @@ list1 = List.new(
 list1.photo.attach(io: onelist, filename:"drama")
 list1.save!
 
+
 twolist = URI.parse("https://i.pinimg.com/736x/df/0d/ed/df0ded888c426121cabcd5ac609b63d3.jpg").open
 list2 = List.new(
   name:"Cartoon",
@@ -71,3 +72,23 @@ list2 = List.new(
 
 list2.photo.attach(io: twolist, filename:"cartoon")
 list2.save!
+
+
+threelist = URI.parse("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtk1EVIjgFXXaH-XtybUjQpvvf1i1GczU-S7jMig7tHz1qSZvc4eUgsX_-8Kmg9DJF7Y8&usqp=CAU").open
+list3 = List.new(
+  name:"Action",
+  description:"Get ready for heart-pounding chases, epic battles, and heroes who never back down. This list of action-packed movies delivers the ultimate dose of adrenaline, from blockbuster thrill rides to gritty underdog stories. Buckle up — it's going to be a wild ride."
+)
+
+list3.photo.attach(io: threelist, filename:"action")
+list3.save!
+
+
+fourthlist = URI.parse("https://cdn.mos.cms.futurecdn.net/DqWtJvYf43VkKyzuYNg6mb-1200-80.jpg").open
+list4 = List.new(
+  name:"Harry Potter",
+  description:"Join Harry, Hermione, and Ron on a timeless journey through the enchanted world of Hogwarts. From powerful spells to dark mysteries and epic battles, each film pulls you deeper into the magic. Get ready for a story of friendship, courage, and destiny that has captivated generations."
+)
+
+list4.photo.attach(io: fourthlist, filename:"harry potter")
+list4.save!
