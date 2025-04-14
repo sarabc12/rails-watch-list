@@ -1,11 +1,14 @@
-
-<h2><%= @list.name %></h2>
-<p><%= link_to "Delete list", list_path(@list),
-                data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure you want to delete the list and associated bookmarks?"
-                } %>
-</p>
+<div class="movie-name">
+  <h2><%= @list.name %></h2>
+  <p><%= link_to list_path(@list),
+                  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure you want to delete the list and associated bookmarks?"
+                  } do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
+  </p>
+</div>
 
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
@@ -17,21 +20,22 @@
     <% @list.bookmarks.each do |bookmark| %>
       <div class="movies-slide">
         <%= link_to movie_path(bookmark.movie) do %>
-          <%= image_tag(bookmark.movie.poster_url, alt: bookmark.movie.title, style: "width: 150px; height: 200px; border-radius: 4px;") %>
+          <%= image_tag(bookmark.movie.poster_url, alt: bookmark.movie.title, style: "width: 150px; height: 200px; border-radius: 32px; margin-left: 8px;") %>
         <% end %>
         <div class="movie-infos">
           <ul>
             <li class="movie-title"><strong><%= bookmark.movie.title %></strong></li>
-
             <div data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
               <li class="my-content" data-read-more-target="content">
                 <%= bookmark.movie.overview %>
               </li>
               <button class="read-more-button" data-action="read-more#toggle">Read more</button>
             </div>
-            <li><%= bookmark.movie.rating.to_i %></li>
+            <li><%= bookmark.movie.rating.to_i %> ⭐</li>
             <li>
-              <%= link_to "Delete bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-trash"></i>
+               <% end %>
             </li>
           </ul>
         </div>
