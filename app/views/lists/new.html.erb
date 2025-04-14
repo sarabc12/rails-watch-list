@@ -1,14 +1,15 @@
-<div class="list-head">
-  <h1>Create a new List</h1>
-</div>
+<div class="new-list-form-container">
+  <div class="list-head">
+    <h1>Create a new List</h1>
+  </div>
 
-<%= render "lists" %>
-
-<div class="new-list-form">
-  <%= simple_form_for @list do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description, as: :text %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit class: "button-85" %>
-  <% end %>
+  <div class="new-list-form">
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :photo, as: :file %>
+    <% end %>
+  <button type="submit" class="button-85" form="new_list_form">Create List</button>
+  </div>
+  <%= render "lists" %>
 </div>

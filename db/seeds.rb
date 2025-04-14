@@ -54,15 +54,6 @@ base_url = "https://api.themoviedb.org/3/movie/popular"
 
 end
 
-onelist = URI.parse("https://s.studiobinder.com/wp-content/uploads/2020/01/What-is-Drama-Definition-Examples-and-Characteristics-Featured.jpg").open
-list1 = List.new(
-  name:"Drama",
-  description:"A curated selection of powerful dramas that explore the depth of human emotion, complex relationships, and unforgettable storytelling. From tearjerkers to thought-provoking narratives, these films will leave a lasting impression."
-)
-
-list1.photo.attach(io: onelist, filename:"drama")
-list1.save!
-
 
 twolist = URI.parse("https://i.pinimg.com/736x/df/0d/ed/df0ded888c426121cabcd5ac609b63d3.jpg").open
 list2 = List.new(
@@ -74,7 +65,7 @@ list2.photo.attach(io: twolist, filename:"cartoon")
 list2.save!
 
 
-threelist = URI.parse("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtk1EVIjgFXXaH-XtybUjQpvvf1i1GczU-S7jMig7tHz1qSZvc4eUgsX_-8Kmg9DJF7Y8&usqp=CAU").open
+threelist = URI.parse("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRn3DX6GLKfUYn1ZzBIe0LBUOhK9qiH7DezQ&s").open
 list3 = List.new(
   name:"Action",
   description:"Get ready for heart-pounding chases, epic battles, and heroes who never back down. This list of action-packed movies delivers the ultimate dose of adrenaline, from blockbuster thrill rides to gritty underdog stories. Buckle up — it's going to be a wild ride."
