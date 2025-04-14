@@ -30,7 +30,7 @@ List.destroy_all
 
 api_key = ENV["MOVIES_KEY"]
 base_url = "https://api.themoviedb.org/3/movie/popular"
-
+seed_url = "https://api.themoviedb.org/3/movie/"
 (1..50).each do |page|
   url = "#{base_url}?api_key=#{api_key}&page=#{page}"
   puts "Fetching page #{page}..."
@@ -64,6 +64,23 @@ list2 = List.new(
 list2.photo.attach(io: twolist, filename:"cartoon")
 list2.save!
 
+bookmark = Bookmark.new
+bookmark.list = list2
+bookmark.movie = Movie.find_by(title: "Hercules")
+bookmark.save!
+puts "Added Cartoon movie to Cartoon list"
+
+bookmark = Bookmark.new
+bookmark.list = list2
+bookmark.movie = Movie.find_by(title: "Leo")
+bookmark.save!
+puts "Added Cartoon movie to Cartoon list"
+
+bookmark = Bookmark.new
+bookmark.list = list2
+bookmark.movie = Movie.find_by(title: "Inside Out 2")
+bookmark.save!
+puts "Added Cartoon movie to Cartoon list"
 
 threelist = URI.parse("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRn3DX6GLKfUYn1ZzBIe0LBUOhK9qiH7DezQ&s").open
 list3 = List.new(
@@ -74,6 +91,24 @@ list3 = List.new(
 list3.photo.attach(io: threelist, filename:"action")
 list3.save!
 
+bookmark = Bookmark.new
+bookmark.list = list3
+bookmark.movie = Movie.find_by(title: "Superman")
+bookmark.save!
+puts "Added Hero movie to Hero list"
+
+bookmark = Bookmark.new
+bookmark.list = list3
+bookmark.movie = Movie.find_by(title: "Batman v Superman: Dawn of Justice")
+bookmark.save!
+puts "Added Hero movie to Hero list"
+
+bookmark = Bookmark.new
+bookmark.list = list3
+bookmark.movie = Movie.find_by(title: "Super Papa")
+bookmark.save!
+puts "Added Hero movie to Hero list"
+
 
 fourthlist = URI.parse("https://cdn.mos.cms.futurecdn.net/DqWtJvYf43VkKyzuYNg6mb-1200-80.jpg").open
 list4 = List.new(
@@ -83,3 +118,21 @@ list4 = List.new(
 
 list4.photo.attach(io: fourthlist, filename:"harry potter")
 list4.save!
+
+bookmark = Bookmark.new
+bookmark.list = list4
+bookmark.movie = Movie.find_by(title: "Harry Potter and the Deathly Hallows: Part 2")
+bookmark.save!
+puts "Added Harry Potter movie to Harry Potter list"
+
+bookmark = Bookmark.new
+bookmark.list = list4
+bookmark.movie = Movie.find_by(title: "Harry Potter and the Philosopher's Stone")
+bookmark.save!
+puts "Added Harry Potter movie to Harry Potter list"
+
+bookmark = Bookmark.new
+bookmark.list = list4
+bookmark.movie = Movie.find_by(title: "Harry Potter and the Chamber of Secrets")
+bookmark.save!
+puts "Added Harry Potter movie to Harry Potter list"
