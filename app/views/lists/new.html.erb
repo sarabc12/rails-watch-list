@@ -2,14 +2,25 @@
   <div class="list-head">
     <h1>Create a new List</h1>
   </div>
-
-  <div class="new-list-form">
+  <div class="new-list-form" data-controller="toggle">
     <%= simple_form_for @list do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description, as: :text %>
+      <%= f.input :name,
+      wrapper_html: { class: "floating-label" },
+      required: false,
+      input_html: { data: { action: "blur->toggle#blurName focus->toggle#transitionName",
+                            toggle_target: "inputName" }},
+      label_html: { data: { toggle_target: "labelName" }}
+       %>
+      <%= f.input :description,
+      as: :text,
+      wrapper_html: { class: "floating-label" },
+      input_html: { data: { action: "blur->toggle#blurDescription focus->toggle#transitionDescription",
+                            toggle_target: "inputDescription" }},
+      label_html: { data: { toggle_target: "labelDescription" }},
+      required: false %>
       <%= f.input :photo, as: :file %>
     <% end %>
-  <button type="submit" class="button-85" form="new_list_form">Create List</button>
+     <button type="submit" class="button-85" form="new_list_form">Create List</button>
   </div>
-  <%= render "lists" %>
 </div>
+<%= render "lists" %>

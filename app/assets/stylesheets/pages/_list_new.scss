@@ -24,20 +24,39 @@
     background-color: black;
   }
 
+  label {
+    position: relative;
+    left: 5px;
+    top: 35px;
+    padding: 0 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: black;
+  }
+
+  label.file.required {
+    display: none;
+  }
+
 
 }
 
-label {
+.focused-label {
   position: relative;
-  left: 5px;
-  top: 35px;
-  background-color: lightgray;
-  padding: 0 5px;
-  transition: transform 0.3s ease, color 0.3s ease;
-
-
+    left: 5px;
+    top: 0;
+    padding: 0 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #B2B2B2;
 }
-input:focus+label {
-  transform: translateY(-25px);
-  color: lightblue;
+
+// .floating-label:focus-within label {
+//   transform: translateY(-35px);
+//   position: relative;
+//   color: #B2B2B2;
+// }
+
+.floating-label {
+  transform: translateY(-35px);
+  // position: relative;
+  color: #B2B2B2 !important;
 }
