@@ -93,7 +93,7 @@ list3.save!
 
 bookmark = Bookmark.new
 bookmark.list = list3
-bookmark.movie = Movie.find_by(title: "Superman")
+bookmark.movie = Movie.find_by(title: "Inside Out 2")
 bookmark.save!
 puts "Added Hero movie to Hero list"
 
