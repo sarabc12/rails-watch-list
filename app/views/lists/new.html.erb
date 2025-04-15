@@ -3,7 +3,7 @@
     <h1>Create a new List</h1>
   </div>
   <div class="new-list-form" data-controller="toggle">
-    <%= simple_form_for @list do |f| %>
+    <%= simple_form_for @list, html: {id:"new_list_form"} do |f| %>
       <%= f.input :name,
       wrapper_html: { class: "floating-label" },
       required: false,
